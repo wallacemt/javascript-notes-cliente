@@ -1,0 +1,27 @@
+@import "./custom_colors.scss";
+
+nav.navbar {
+    height: 75px;
+    border-bottom: 1px solid whitesmoke;
+    .navbar-brand{
+        img{
+            height: 50px;
+            margin-top: 9px;
+            margin-left: 40px;
+        }
+    }
+}
+
+.navbar-item img, .navbar-item svg {
+    max-height: 45px;
+}
+.is-light{
+    color: #694ED8;
+    font-weight: bold;
+}
+.is-primary{
+    color: #694ED8;
+}
+.is-primary:hover{
+    border: 1px solid #694ED8;
+}

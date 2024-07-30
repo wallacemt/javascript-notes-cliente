@@ -1,6 +1,13 @@
-import React from "react";
+import React, {Fragment} from 'react';
+import "./App.scss"
+import AppRoutes from './routes';
 
-const App = () => <p>Javascript Notes</p>
-
+const App = () => {
+  return (
+    <Fragment>
+      <AppRoutes/>
+    </Fragment>
+  );
+}
 
 export default App;
