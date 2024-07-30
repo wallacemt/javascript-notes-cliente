@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 
 const NotesIndexScreen = () => {
-    <Fragment>
-        <h1>Ola Mundoo</h1>
-    </Fragment>
+    return (
+        <Fragment>
+            Hello Wordzin
+        </Fragment>
+    )
 }
 
 export default NotesIndexScreen;

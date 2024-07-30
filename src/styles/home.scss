@@ -4,3 +4,12 @@
     background-color: $custom-purple;
     height: calc(100% - 75px);
 }
+
+@media(width < 1024px) {
+    .buttons{
+        flex-direction: column;
+    }
+    #navbarBasicExample{
+        border-bottom: 1px solid whitesmoke;
+    }
+}

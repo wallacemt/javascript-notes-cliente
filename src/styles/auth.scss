@@ -1,0 +1,32 @@
+@import "./custom_colors.scss";
+
+.auth{
+    background-color: $custom-purple;
+    height: calc(100% - 75px);
+}
+.card{
+    background-color: white;
+}
+.label{
+    color: #000;
+}
+.input{
+    background-color: white;
+    color: #000;
+}
+
+
+.login:hover{
+    border: 1px solid $custom-purple;
+    font-weight: bold;
+}
+.register:hover{
+    border: 1px solid $custom-purple;
+    font-weight: bold;
+}
+
+@media(width > 770px){
+    .card{
+        max-width: 300px;
+    }
+}

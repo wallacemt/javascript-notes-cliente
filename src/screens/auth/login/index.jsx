@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 
 const loginScreen = () => {
-    <Fragment>
-        Hello Wordzin
-    </Fragment>
+    return (
+        <Fragment>
+            Hello Wordzin
+        </Fragment>
+    )
 }
 
 export default loginScreen;
