@@ -13,24 +13,36 @@
     color: #000;
 }
 
+.button{
+    transition: .3s;
+}
 .input {
     background-color: white;
     color: #000;
 }
+.input::placeholder{
+    color: $custom-purple;
+}
 
-
+.login{
+    color: $custom-purple;
+}
 .login:hover {
     border: 1px solid $custom-purple;
     font-weight: bold;
 }
 
+.button.is-outlined{
+    color: white;
+    background-color: $custom-purple;
+}
 .register:hover {
     border: 1px solid $custom-purple;
     font-weight: bold;
 }
 
 .columns.is-mobile {
-    margin-top: 15px;
+    margin-top: -5px;
     display: flex;
 }
 

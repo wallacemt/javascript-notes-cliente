@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import 'bulma/css/bulma.css';
 import { useNavigate } from "react-router-dom";
-
+import UserService from '../../../services/users';
 
 
 const RegisterForm = () => {
@@ -12,13 +12,24 @@ const RegisterForm = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate()
 
-    if(redirectToLogin){
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+
+        try {
+            const user = await UserService.register({ name: name, email: email, password: password });
+            setRedirectToLogin(true);
+        } catch (error) {
+            setError(true)
+        }
+    }
+
+    if (redirectToLogin) {
         return navigate('/login')
     }
     return (
         <Fragment>
             <div className="columns is-centered">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="column is-12">
                         <div className="field">
                             <label className="label is-small">Name:</label>
@@ -27,6 +38,7 @@ const RegisterForm = () => {
                                     className="input"
                                     type="text"
                                     name="name"
+                                    placeholder="Name"
                                     required
                                     value={name}
                                     onChange={e => setName(e.target.value)}
@@ -40,6 +52,7 @@ const RegisterForm = () => {
                                     className="input"
                                     type="email"
                                     name="email"
+                                    placeholder="email@gmail.com"
                                     required
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
@@ -53,10 +66,13 @@ const RegisterForm = () => {
                                     className="input password"
                                     type="password"
                                     name="password"
+                                    placeholder="********"
                                     required
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                 />
+
+                                {error && <span className="help is-danger">Email or Password invalid</span>}
                             </div>
                         </div>
                         <div className="field">
@@ -64,7 +80,7 @@ const RegisterForm = () => {
                                 <div className="columns is-mobile">
                                     <div className="column">
                                         <a className="button is-white has-text-custom-purple login"
-                                        onClick={e => setRedirectToLogin(true)}
+                                            onClick={e => setRedirectToLogin(true)}
                                         >Login</a>
                                     </div>
                                     <div className="column">
@@ -73,7 +89,6 @@ const RegisterForm = () => {
                                 </div>
                             </div>
                         </div>
-                        {error && <span className="help is-danger">Email or Password invalid</span>}
                     </div>
                 </form>
             </div>
