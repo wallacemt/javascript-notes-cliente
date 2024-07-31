@@ -2,49 +2,36 @@ import React, { Fragment, useState } from "react";
 import 'bulma/css/bulma.css';
 import { useNavigate } from "react-router-dom";
 import UserService from '../../../services/users';
-    
 
-const RegisterForm = () => {
-    const [name, setName] = useState("");
+
+const LoginForm = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("")
-    const [redirectToLogin, setRedirectToLogin] = useState(false);
-    const [error, setError] = useState("");
+    const [password, setPassword] = useState("");
+    const [RedirectToRegister, setRedirectToRegister] = useState(false);
+    const [RedirectToNotes, setRedirectToNotes] = useState(false);
+    const [error, setError] = useState(false);
     const navigate = useNavigate()
 
-    const handleSubmit = async (evt) => {
+    const HandleSubmit = async (evt) => {
         evt.preventDefault();
-
         try {
-            const user = await UserService.register({ name: name, email: email, password: password });
-            setRedirectToLogin(true);
+            const user = await UserService.login({ email: email, password: password });
+            setRedirectToNotes(true);
         } catch (error) {
             setError(true)
         }
     }
 
-    if (redirectToLogin) {
-        return navigate('/login')
-    }
+    if (RedirectToRegister)
+        return navigate('/register')
+    else if (RedirectToNotes)
+        return navigate('/notes')
+
     return (
         <Fragment>
             <div className="columns is-centered">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={HandleSubmit}>
                     <div className="column is-12">
-                        <div className="field">
-                            <label className="label is-small">Name:</label>
-                            <div className="control">
-                                <input
-                                    className="input"
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    required
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
-                                />
-                            </div>
-                        </div>
                         <div className="field">
                             <label className="label is-small">Email:</label>
                             <div className="control">
@@ -80,11 +67,11 @@ const RegisterForm = () => {
                                 <div className="columns is-mobile">
                                     <div className="column">
                                         <a className="button is-white has-text-custom-purple login"
-                                            onClick={e => setRedirectToLogin(true)}
-                                        >Login</a>
+                                            onClick={e => setRedirectToRegister(true)}
+                                        >Register</a>
                                     </div>
                                     <div className="column">
-                                        <button className="button is-outlined is-custom-purple register">Register</button>
+                                        <button className="button is-outlined is-custom-purple register">Login</button>
                                     </div>
                                 </div>
                             </div>
@@ -96,4 +83,4 @@ const RegisterForm = () => {
     )
 }
 
-export default RegisterForm
+export default LoginForm;
