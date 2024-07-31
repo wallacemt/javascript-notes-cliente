@@ -50,7 +50,7 @@ const RegisterForm = () => {
                             <label className="label is-small">Password:</label>
                             <div className="control">
                                 <input
-                                    className="input"
+                                    className="input password"
                                     type="password"
                                     name="password"
                                     required

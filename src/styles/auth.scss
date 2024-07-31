@@ -1,32 +1,106 @@
 @import "./custom_colors.scss";
 
-.auth{
+.auth {
     background-color: $custom-purple;
     height: calc(100% - 75px);
 }
-.card{
+
+.card {
     background-color: white;
 }
-.label{
+
+.label {
     color: #000;
 }
-.input{
+
+.input {
     background-color: white;
     color: #000;
 }
 
 
-.login:hover{
+.login:hover {
     border: 1px solid $custom-purple;
     font-weight: bold;
 }
-.register:hover{
+
+.register:hover {
     border: 1px solid $custom-purple;
     font-weight: bold;
 }
 
-@media(width > 770px){
-    .card{
-        max-width: 300px;
+.columns.is-mobile {
+    margin-top: 15px;
+    display: flex;
+}
+
+@media screen and (min-width: 769px),
+print {
+    #root {
+        transition: 1s;
+    }
+
+    .column.is-3,
+    .column.is-3-tablet {
+        flex: none;
+        width: 60%;
+    }
+
+    .section {
+        padding: var(--bulma-section-padding-desktop);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1200px),
+print {
+
+    .column.is-3,
+    .column.is-3-tablet {
+        flex: none;
+        width: 40%;
+    }
+
+    .input {
+        width: 400px;
+    }
+
+    .register {
+        margin-left: 75px;
+        width: 130px;
+    }
+
+    .login {
+        
+        width: 130px;
+    }
+
+}
+
+@media screen and (max-width: 769px),
+print {
+
+    .column.is-3,
+    .column.is-3-tablet {
+        flex: none;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .card-content{
+        max-height: 520px;
+    }
+        
+    .section {
+        padding: var(--bulma-section-padding-desktop);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
     }
 }
