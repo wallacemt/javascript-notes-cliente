@@ -7,6 +7,44 @@ $custom-colors: (
     "custom-purple": ($custom-purple),
     "custom-purple-darker": ($custom-purple-darker)
 );
-body{
+
+body {
     background-color: white;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.content-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.route-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease;
 }

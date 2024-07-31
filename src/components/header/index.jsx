@@ -4,6 +4,7 @@ import logoImage from "../../assets/images/logo-white.png"
 import "../../styles/header.scss"
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
@@ -12,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar header" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to={"/"}>
           <img src={logoImage} alt="Logo" />

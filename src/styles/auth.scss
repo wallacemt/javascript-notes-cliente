@@ -17,7 +17,9 @@
     background-color: white;
     color: #000;
 }
-
+.input::placeholder{
+    color: #000;
+}
 
 .login:hover {
     border: 1px solid $custom-purple;
