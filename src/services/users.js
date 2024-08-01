@@ -7,7 +7,13 @@ const UserService = {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
         
-    }    
+    },
+    logout: () => {
+        localStorage.removeItem("user", null);
+        localStorage.removeItem("token", null);
+        
+
+    }
 
 }
 

@@ -3,25 +3,58 @@
 nav.navbar {
     height: 75px;
     border-bottom: 1px solid whitesmoke;
-    .navbar-brand{
-        img{
-            height: 50px;
-            margin-top: 9px;
-            margin-left: 40px;
-        }
-    }
 }
 
-.navbar-item img, .navbar-item svg {
+.navbar-logout img {
+    height: 50px;
+    margin-top: 9px;
+    margin-left: 40px;
+    filter: brightness(250%) saturate(200%) contrast(100%);
+}
+
+.navbar-logged img {
+    height: 50px;
+    margin-top: -1px;
+}
+
+.navbar-logged .is-active {
+    margin-top: -5px;
+    background-color: ($custom-purple);
+}
+
+.dropdown.is-right .dropdown-menu {
+    left: -9px;
+    width: 100px;
+}
+
+.dropdown-content {
+    width: 110px;
+}
+
+.dropdown-content a {
+    
+    background-color: transparent;
+}
+
+
+.navbar-item img,
+.navbar-item svg {
     max-height: 45px;
 }
-.is-light{
+
+.is-light {
     color: #694ED8;
     font-weight: bold;
 }
-.is-primary{
+
+.is-primary {
     color: #694ED8;
 }
-.is-primary:hover{
+
+.is-primary:hover {
     border: 1px solid #694ED8;
+}
+
+.navbar-logged {
+    background-color: ($custom-purple);
 }

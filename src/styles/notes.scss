@@ -1,0 +1,8 @@
+@import "./custom_colors.scss";
+
+.notes{
+    background-color: ($custom-gray);
+    height: calc(100% - 75px);
+    margin-left: 0px;
+    margin-right: 0px;
+}

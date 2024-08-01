@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bulma/css/bulma.css';
-import logoImage from "../../assets/images/logo-white.png"
+import logoImage from "../../assets/images/logo.png"
 import "../../styles/header.scss"
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <nav className="navbar header" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
+      <div className="navbar-brand navbar-logout">
         <Link to={"/"}>
           <img src={logoImage} alt="Logo" />
         </Link>
