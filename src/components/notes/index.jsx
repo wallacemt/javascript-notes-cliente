@@ -1,9 +1,32 @@
-import React, {useState, Fragment} from "react";
+import React, { useState, Fragment , useEffect} from "react";
 import "../../styles/notes.scss"
-const Notes = () => {
-    return(
+import { push as Menu } from "react-burger-menu"
+
+const Notes = (props) => {
+    return (
         <Fragment>
-            <div className="notes">lorem100</div>
+            <div className="columns notes" id="notes">
+                <Menu
+                    pageWrapId={"notes-editor"}
+                    isOpen={props.isOpen}
+                    onStateChange={(state) => props.setIsOpen(state.isOpen)}
+                    disableAutoFocus
+                    outerContainerId={"notes"}
+                    customBurgerIcon={false}
+                    customCrossIcon={false}
+                >
+                    <div className="columns">
+                        <div className="column is-10 is-offset-1">
+                            Search...
+                        </div>
+                    </div>
+                    <p>List...</p>
+                </Menu>
+
+                <div className="column is-12 notes-editor" id="notes-editor">
+                    Editor...
+                </div>
+            </div>
         </Fragment>
     )
 }

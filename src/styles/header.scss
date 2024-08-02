@@ -32,7 +32,6 @@ nav.navbar {
 }
 
 .dropdown-content a {
-    
     background-color: transparent;
 }
 
@@ -57,4 +56,8 @@ nav.navbar {
 
 .navbar-logged {
     background-color: ($custom-purple);
+}
+
+.navbar-burger{
+    color: #fff;
 }

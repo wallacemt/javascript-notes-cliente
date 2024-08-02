@@ -37,10 +37,21 @@ function HeaderLogged(props) {
                         <img src={logoImage} alt="Logo" />
                     </Link>
                 </div>
+
                 <div className={`navbar-burger burger navbar-logged ${isMenuActive ? 'is-active' : ''}`} onClick={toggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>
+                </div>
+            </div>
+            
+            <div className="navbar-item navbar-start">
+                <div className="navbar-item">
+                    <button
+                        className="button is-white is-outlined open-button"
+                        onClick={() => props.setIsOpen(true)}>
+                        <FontAwesomeIcon icon={faList} />
+                    </button>
                 </div>
             </div>
 
