@@ -1,6 +1,6 @@
 @import "./custom_colors.scss";
 
-.notes{
+.notes {
     background-color: ($custom-gray);
     height: calc(100% - 75px);
     margin-left: 0px;
@@ -8,7 +8,43 @@
     margin-top: 0px;
 }
 
-.bm-menu{
+.bm-menu {
     background-color: #fff;
     padding-top: 10px;
+}
+
+.notes-list {
+    cursor: pointer;
+}
+
+.notes-list {
+    .list-item {
+        background-color: $custom-light-gray;
+        border-left: 4px solid transparent;
+        padding: 10px;
+        transition: background-color 0.3s ease, border-left-color 0.3s ease;
+
+        &:hover {
+            background-color: $custom-hover-gray;
+        }
+
+        &.is-active {
+            background-color: $custom-active-gray;
+            border-left-color: $custom-highlight-color;
+        }
+
+        .title,
+        .subtitle {
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .tag {
+            margin-top: 5px;
+        }
+    }
+}
+
+.notes{
+    color: #000;
 }
