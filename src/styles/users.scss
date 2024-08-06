@@ -1,0 +1,46 @@
+@import "./custom_colors";
+
+.users {
+  padding-top: 40px !important;
+  background-color: $custom-purple;
+  height: calc(100% - 75px);
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .users-edit {
+    .title {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+  }
+
+  .button.is-danger {
+    margin-bottom: -30px;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.custom-purple {
+  border-color: $custom-purple;
+  color: $custom-purple;
+
+  &:hover,
+  &.is-active {
+    background-color: $custom-purple;
+    color: #fff;
+  }
+}
+
+.input {
+  border: 1px solid $custom-purple;
+
+  &:focus {
+    border-color: $custom-blue;
+    box-shadow: 0 0 0 0.125em rgba($custom-blue, 0.25);
+  }
+}
