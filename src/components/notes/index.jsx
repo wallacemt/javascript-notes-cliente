@@ -2,6 +2,7 @@ import React, { useState, Fragment, useEffect } from "react";
 import "../../styles/notes.scss"
 import { push as Menu } from "react-burger-menu"
 import List from "./list";
+import Editor from './editor'
 import NotesService from '../../services/notes'
 
 const Notes = (props) => {
@@ -23,6 +24,15 @@ const Notes = (props) => {
     const deleteNote = async (note) => {
         await NotesService.delete(note._id);
         fetchNotes();
+    }
+
+    const updateNote = async (oldNote, params) => {
+        const updateNote = await NotesService.update(oldNote._id, params);
+        const index = notes.indexOf(oldNote);
+        const newNotes = notes;
+        newNotes[index] = updateNote.data;
+        setNotes(newNotes);
+        setCurrentNote(updateNote.data)
     }
 
     const selectNote = (id) => {
@@ -64,7 +74,10 @@ const Notes = (props) => {
                 </Menu>
 
                 <div className="column is-12 notes-editor" id="notes-editor">
-                    Editor...
+                    <Editor
+                     note={current_note}
+                     updateNote={updateNote}
+                     />
                 </div>
             </div>
         </Fragment>

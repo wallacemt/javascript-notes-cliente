@@ -37,14 +37,6 @@ function HeaderLogged(props) {
                         <img src={logoImage} alt="Logo" />
                     </Link>
                 </div>
-
-                <div className={`navbar-burger burger navbar-logged ${isMenuActive ? 'is-active' : ''}`} onClick={toggleMenu}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
             <div className="navbar-item navbar-start">
                 <div className="navbar-item">
                     <button
@@ -54,6 +46,13 @@ function HeaderLogged(props) {
                     </button>
                 </div>
             </div>
+                <div className={`navbar-burger burger navbar-logged ${isMenuActive ? 'is-active' : ''}`} onClick={toggleMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
 
             <div className={`navbar-menu ${isMenuActive ? 'is-active' : ''} logged`}>
                 <div className="navbar-end">

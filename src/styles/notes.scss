@@ -48,3 +48,13 @@
 .notes{
     color: #000;
 }
+
+.notes-editor{
+    padding: 0px;
+    height: calc(100% - 40px);
+    .quill{
+        overflow: hidden;
+        height: 100%;
+    }
+
+}
