@@ -1,18 +1,17 @@
 import React, { Fragment } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import HeaderLogged from '../../../components/header_logged';
 import UsersEditForm from '../../../components/users/users_edit_forms';
 import UsersEditFormPassword from '../../../components/users/users_edit_password_forms';
+import UsersDelete from '../../../components/users/user_delete';
 import "../../../styles/users.scss"
 
 const UserEditScreen = () => {
-    
+
     let iconLogo = document.querySelector('.navbar-item.navbar-start')
     if (iconLogo) {
         iconLogo.classList.add('hide');
     }
-    const setIsOpen= () => {
+    const setIsOpen = () => {
         return null
     }
     return (
@@ -47,9 +46,7 @@ const UserEditScreen = () => {
                     </div>
                     <div className="columns is-centered">
                         <div className="column is-4 has-text-right">
-                            <button className="button is-danger">
-                                <FontAwesomeIcon icon={faTrash} /> Delete Account
-                            </button>
+                            <UsersDelete />
                         </div>
                     </div>
                 </div>

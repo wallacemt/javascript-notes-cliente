@@ -25,7 +25,7 @@ const UserService = {
     },
     delete: async () => {
         await Api.delete('/users', {
-            headers: { 'x-acess-token': localStorage.getItem('token') }
+            headers: { 'x-acess-token': localStorage.getItem("token") }
         })
         localStorage.removeItem("user", null);
         localStorage.removeItem('token', null);

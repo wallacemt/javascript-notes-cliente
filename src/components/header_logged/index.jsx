@@ -11,6 +11,7 @@ function HeaderLogged(props) {
     const [redirectToHome, setRedirectToHome] = useState(false);
     const [isDropdownActive, setIsDropdownActive] = useState(false);
     const [isMenuActive, setIsMenuActive] = useState(false);
+    const [user] = useState(localStorage.getItem('user'))
 
     const logOut = async () => {
         await UsersService.logout();
@@ -65,7 +66,7 @@ function HeaderLogged(props) {
                                     aria-controls="dropdown-menu"
                                     onClick={toggleDropdown}
                                 >
-                                    <span>Wallace ▼</span>
+                                    <span>{JSON.parse(user)["name"]} ▼</span>
                                 </button>
                             </div>
                             <div className="dropdown-menu" id="dropdown-menu" role="menu">
