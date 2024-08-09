@@ -6,6 +6,7 @@ import "../../../styles/auth.scss"
 import LoginForm from "../../../components/auth/login_form";
 
 const LoginScreen = () => {
+    document.title = "Javascript Notes - Login"
     return (
         <Fragment>
             <Header />

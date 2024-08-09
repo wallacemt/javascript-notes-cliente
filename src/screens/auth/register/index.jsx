@@ -6,6 +6,7 @@ import "../../../styles/auth.scss"
 import RegisterFrom from "../../../components/auth/register_form"
 
 const RegisterScreen = () => {
+    document.title = "Javascript Notes - Register"
     return (
         <Fragment>
             <Header />

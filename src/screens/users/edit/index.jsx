@@ -6,7 +6,7 @@ import UsersDelete from '../../../components/users/user_delete';
 import "../../../styles/users.scss"
 
 const UserEditScreen = () => {
-
+    document.title = "Notes - User Edit"
     let iconLogo = document.querySelector('.navbar-item.navbar-start')
     if (iconLogo) {
         iconLogo.classList.add('hide');

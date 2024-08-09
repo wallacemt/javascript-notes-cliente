@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderLogged(props) {
+    document.title = "Notes - Home";
     const [redirectToHome, setRedirectToHome] = useState(false);
     const [isDropdownActive, setIsDropdownActive] = useState(false);
     const [isMenuActive, setIsMenuActive] = useState(false);

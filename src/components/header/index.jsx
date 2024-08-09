@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
+  document.title = "Javascript Notes";
   const [isActive, setIsActive] = useState(false);
 
   const toggleBurgerMenu = () => {
