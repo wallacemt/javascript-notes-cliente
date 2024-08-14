@@ -14,8 +14,6 @@ const LoginForm = () => {
 
     const navigate = useNavigate();
 
-
-
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         if (!recaptchaToken) {
@@ -23,7 +21,8 @@ const LoginForm = () => {
             return;
         }
         try {
-            const user = await UserService.login({ email, password, recaptchaToken });
+            const user = { email, password, recaptchaToken };
+            await UserService.login(user)
             setRedirectToNotes(true);
         } catch (error) {
             setError(true);
@@ -76,8 +75,8 @@ const LoginForm = () => {
 
                         <div className="field">
                             <ReCAPTCHA
-                                sitekey="6Lfo_yYqAAAAAHUoBiLnu9euIr_riDJJ6ubHtnxP"
-                                onChange={process.env.REACT_APP_RECAPTCHA_SITE_TOKEN}
+                                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_TOKEN}
+                                onChange={handleRecaptchaChange}
                             />
                         </div>
 
@@ -98,7 +97,6 @@ const LoginForm = () => {
                     </div>
                 </form>
             </div>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </Fragment>
     );
 };
