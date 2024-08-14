@@ -77,7 +77,7 @@ const LoginForm = () => {
                         <div className="field">
                             <ReCAPTCHA
                                 sitekey="6Lfo_yYqAAAAAHUoBiLnu9euIr_riDJJ6ubHtnxP"
-                                onChange={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                                onChange={process.env.REACT_APP_RECAPTCHA_SITE_TOKEN}
                             />
                         </div>
 
