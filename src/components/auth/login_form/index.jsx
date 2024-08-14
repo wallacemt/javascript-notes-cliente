@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import 'bulma/css/bulma.css';
 import { useNavigate } from "react-router-dom";
 import UserService from '../../../services/users';
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
@@ -10,27 +10,39 @@ const LoginForm = () => {
     const [RedirectToRegister, setRedirectToRegister] = useState(false);
     const [RedirectToNotes, setRedirectToNotes] = useState(false);
     const [error, setError] = useState(false);
-    const navigate = useNavigate()
+    const [recaptchaToken, setRecaptchaToken] = useState("");
 
-    const HandleSubmit = async (evt) => {
+    const navigate = useNavigate();
+
+
+
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
+        if (!recaptchaToken) {
+            setError(true);
+            return;
+        }
         try {
-            const user = await UserService.login({ email: email, password: password });
+            const user = await UserService.login({ email, password, recaptchaToken });
             setRedirectToNotes(true);
         } catch (error) {
-            setError(true)
+            setError(true);
         }
-    }
+    };
+    const handleRecaptchaChange = (token) => {
+        setRecaptchaToken(token);
+    };
 
-    if (RedirectToRegister)
-        return navigate('/register')
-    else if (RedirectToNotes)
-        return navigate('/notes')
+    if (RedirectToRegister) {
+        navigate('/register');
+    } else if (RedirectToNotes) {
+        navigate('/notes');
+    }
 
     return (
         <Fragment>
             <div className="columns is-centered">
-                <form onSubmit={HandleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className="column is-12">
                         <div className="field">
                             <label className="label is-small">Email:</label>
@@ -58,16 +70,23 @@ const LoginForm = () => {
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                 />
-
                                 {error && <span className="help is-danger">Email or Password invalid</span>}
                             </div>
                         </div>
+
+                        <div className="field">
+                            <ReCAPTCHA
+                                sitekey="6Lfo_yYqAAAAAHUoBiLnu9euIr_riDJJ6ubHtnxP"
+                                onChange={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                            />
+                        </div>
+
                         <div className="field">
                             <div className="control">
                                 <div className="columns is-mobile">
                                     <div className="column">
                                         <a className="button is-white has-text-custom-purple login"
-                                            onClick={e => setRedirectToRegister(true)}
+                                            onClick={() => setRedirectToRegister(true)}
                                         >Register</a>
                                     </div>
                                     <div className="column">
@@ -79,8 +98,9 @@ const LoginForm = () => {
                     </div>
                 </form>
             </div>
-        </Fragment >
-    )
-}
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </Fragment>
+    );
+};
 
 export default LoginForm;
