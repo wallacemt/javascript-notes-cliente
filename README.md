@@ -1,4 +1,4 @@
-# JavaScript Notes - Frontend
+# JavaScript Notes - Frontend 🎨
 
 ## 📋 Descrição
 
