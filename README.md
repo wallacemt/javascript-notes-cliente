@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# JavaScript Notes - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Descrição
 
-## Available Scripts
+O **JavaScript Notes** é uma aplicação web que permite aos usuários criar e gerenciar notas pessoais. Cada usuário pode criar uma conta e suas notas são mantidas privadas e acessíveis somente por ele. A aplicação é construída com React e utiliza Bulma para estilização.
 
-In the project directory, you can run:
+## 🛠️ Tecnologias Utilizadas
 
-### `npm start`
+- **React**: Biblioteca JavaScript para construir interfaces de usuário.
+- **Bulma**: Framework CSS para estilização.
+- **React Google reCAPTCHA**: Para autenticação e segurança adicional.
+- **React Quill**: Editor de rich text para criar e editar notas.
+- **Axios**: Para realizar requisições HTTP à API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📋 Requisitos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (versão 14 ou superior)
+- npm (ou yarn)
 
-### `npm test`
+## 🚀 Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📥 Clone o repositório
 
-### `npm run build`
+```bash
+git clone https://github.com/seu-usuario/javascript_notes.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Navegue para o diretório do projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd javascript_notes
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 Instale as dependências
 
-### `npm run eject`
+Usando npm:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ou, se estiver usando yarn:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+yarn install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Configuração
 
-## Learn More
+1. Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de ambiente:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```env
+    REACT_APP_RECAPTCHA_SITE_KEY=SuaSiteKeyAqui
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Substitua `SuaSiteKeyAqui` pela chave do site do reCAPTCHA v2 que você obteve ao configurar o Google reCAPTCHA.
 
-### Code Splitting
+## 🚀 Uso
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Inicie o servidor de desenvolvimento:
 
-### Analyzing the Bundle Size
+    Usando npm:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    npm start
+    ```
 
-### Making a Progressive Web App
+    ou, se estiver usando yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ```bash
+    yarn start
+    ```
+    
+## Scripts
 
-### Advanced Configuration
+- **start**: 🖥️ Inicia o servidor de desenvolvimento.
+- **build**: 📦 Cria uma versão otimizada para produção.
+- **test**: 🧪 Executa os testes configurados.
+- **eject**: 🚀 Remove a configuração padrão do Create React App (geralmente não necessário).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contribuição
 
-### Deployment
+1. 🍴 Faça um fork deste repositório.
+2. 🌿 Crie uma nova branch (`git checkout -b minha-feature`).
+3. 💻 Faça suas alterações e commite-as (`git commit -am 'Adiciona nova feature'`).
+4. 📤 Envie suas alterações para o repositório remoto (`git push origin minha-feature`).
+5. 🔄 Abra um Pull Request para a branch principal do projeto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Licença
 
-### `npm run build` fails to minify
+📜 Este projeto está licenciado sob a Licença MIT.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contato
+
+📧 Wallace - [wallacesantanak0@gmail.com](mailto:wallacesantanak0@gmail.com)  
+🐙 GitHub: [wallacemt](https://github.com/wallacemt)
+
+
