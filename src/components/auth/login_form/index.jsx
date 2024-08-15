@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
     const [RedirectToRegister, setRedirectToRegister] = useState(false);
     const [RedirectToNotes, setRedirectToNotes] = useState(false);
     const [error, setError] = useState(false);
@@ -21,7 +22,7 @@ const LoginForm = () => {
             return;
         }
         try {
-            const user = { email, password, recaptchaToken };
+            const user = { email, password, recaptchaToken, rememberMe };
             await UserService.login(user)
             setRedirectToNotes(true);
         } catch (error) {
@@ -74,11 +75,25 @@ const LoginForm = () => {
                         </div>
 
                         <div className="field">
+                            <div className="control">
+                                <label className="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        checked={rememberMe}
+                                        onChange={() => setRememberMe(!rememberMe)}
+                                    />
+                                    <span className="ml-2">Remember me</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="field recaptcha">
                             <ReCAPTCHA
                                 sitekey={process.env.REACT_APP_RECAPTCHA_SITE_TOKEN}
                                 onChange={handleRecaptchaChange}
                             />
                         </div>
+
 
                         <div className="field">
                             <div className="control">
