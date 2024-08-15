@@ -8,6 +8,7 @@ const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
     const [RedirectToRegister, setRedirectToRegister] = useState(false);
     const [RedirectToNotes, setRedirectToNotes] = useState(false);
     const [error, setError] = useState(false);
@@ -29,6 +30,7 @@ const LoginForm = () => {
             setError(true);
         }
     };
+
     const handleRecaptchaChange = (token) => {
         setRecaptchaToken(token);
     };
