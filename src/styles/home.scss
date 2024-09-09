@@ -5,6 +5,24 @@
     height: calc(100% - 75px);
 }
 
+#row {
+    min-width: 50px;
+    height: 5px;
+    color: white;
+    background-color: $custom-purple-darker;
+}
+
+.subtitle{
+    color: #000;
+    opacity: 50%;
+    font-size: 17px;
+    transition: 1s;
+}
+.subtitle:hover{
+    color: #fff;
+    opacity: 100%;
+    transition: 1s;
+}
 @media(width < 1024px) {
     .buttons {
         flex-direction: column;
@@ -19,7 +37,8 @@
     .column is-5 {
         margin-top: 100px;
     }
-    .dif{
+
+    .dif {
         padding: 0px;
         margin-bottom: -55px;
     }
@@ -27,9 +46,11 @@
     .title.is-1 {
         font-size: 2rem;
     }
-    .presentation{
+
+    .presentation {
         width: 260px;
     }
+
     .button.is-large {
         --bulma-control-size: 20px;
         margin-bottom: 45px;

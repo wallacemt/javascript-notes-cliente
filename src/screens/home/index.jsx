@@ -13,11 +13,12 @@ const HomeScreen = () => {
                     <div className="columns">
                         <div className="column is-5 dif">
                             <h1 className="title is-1 has-text-white spaced">
-                                Create notes easily and access when you wants on the cloud
+                                Crie notas de forma rápida e acesse-as a qualquer momento na nuvem
                             </h1>
-                            <h2 className="subtitle is-5 has-text-light spaced">
-                                Lorem ipsum, or lipsum as it is sometimes known, laying out print, graphic or web designs.<br /><br />
-                                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
+                            <hr id="row"/>
+                            <h2 className="subtitle has-text spaced">
+                                Armazene suas ideias, lembretes e informações importantes com facilidade, e tenha acesso a elas de qualquer lugar e a qualquer hora. Simples, seguro e sempre ao seu alcance.<br /><br />
+                                Crie, organize e acesse suas notas com facilidade. Nosso site permite que você adicione, edite e categorize suas anotações de forma intuitiva.
                             </h2>
 
                             <Link to={'./register'} className="button is-outlined is-white is-large">
