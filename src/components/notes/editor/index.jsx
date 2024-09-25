@@ -24,11 +24,13 @@ function Editor(props) {
         <Fragment>
             <TinyMCEEditor
                 value={currentContent}
-                apiKey="bnkcvpnss1lbevivp007qsax2o5ynydm9u5ml4do28bn2g4d"  
+                apiKey={'bnkcvpnss1lbevivp007qsax2o5ynydm9u5ml4do28bn2g4d'}
                 init={{
-                    height: '100vh',  
-                    width: '100%',   
+                    height: '92vh',
+                    width: '100%',
+                    language: 'pt_BR',
                     menubar: false,
+                    skin:"oxide-dark",
                     plugins: [
                         'advlist autolink lists link image charmap print preview anchor',
                         'searchreplace visualblocks code fullscreen',
